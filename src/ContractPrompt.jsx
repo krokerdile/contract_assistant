@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import {Configuration, OpenAIApi } from "openai";
 
-const KEY = import.meta.env.REACT_APP_OPENAI_API_KEY;
+const KEY = import.meta.env.VITE_OPENAI_API_KEY;
 
 const ContractPrompt = () => {
   const configuration = new Configuration({
@@ -19,7 +19,7 @@ const ContractPrompt = () => {
 
     try {
       const result = await openai.createCompletion({
-        model: "gpt-3.5-turbo",
+        model: "text-davinci-003",
         prompt: input,
         temperature: 0.5,
         max_tokens: 100,
