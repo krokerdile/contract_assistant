@@ -13,12 +13,12 @@ function App() {
   const [value, setValue] = useState(0);
   const [test, setTest] = useState("");
   const [recommendTrio, setRecommendTrio] = useState("");
-  // const handleClick = () => {
-  //   if (input.current) {
-  //     input.current.value = "";
-  //     setValue("");
-  //   }
-  // };
+  const handleClick = () => {
+    if (input.current) {
+      input.current.value = "";
+      setValue("");
+    }
+  };
 
   const configuration = new Configuration({
     apiKey: KEY,
@@ -182,9 +182,9 @@ function App() {
             setValue(input.current.value);
           }}
         />
-        {/* <SearchButton type="button" onClick={handleClick}>
+        <SearchButton type="button" onClick={handleClick}>
           Reset
-        </SearchButton> */}
+        </SearchButton>
         <SearchButton type="button" onClick={handleSubmit}>
           Search
         </SearchButton>
