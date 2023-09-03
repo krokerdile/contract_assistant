@@ -14,10 +14,11 @@ function App() {
   const [test, setTest] = useState("");
   const [recommendTrio, setRecommendTrio] = useState("");
   const handleClick = () => {
-    if (input.current) {
-      input.current.value = "";
-      setValue("");
-    }
+    // if (input.current) {
+    //   input.current.value = "";
+    //   setValue("");
+    // }
+    setMessages([]);
   };
 
   const configuration = new Configuration({
