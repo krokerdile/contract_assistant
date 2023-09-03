@@ -119,11 +119,12 @@ function App() {
   };
 
   const addButtton = async (topic) => {
+    setLoading(true);
     setTest(topic);
     setArr([]);
     try {
       setMessages((prevMessages) => [...prevMessages, { text: "USER: " + topic + "에 대해서 알려줘" }]);
-      const prompt = topic + "에 대해서 알려주고 주요 항목을 정리해서 200자 이내로 알려줘";
+      const prompt = topic + "에 대해서 알려주고 주요 항목을 정리해서 150자 이내로 알려줘";
       const result = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: prompt,
@@ -137,6 +138,7 @@ function App() {
     } catch (e) {
       setResponse("Something went wrong. Please try again.");
     }
+    setLoading(false);
   };
 
   return (
