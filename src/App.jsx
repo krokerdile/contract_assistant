@@ -79,7 +79,7 @@ function App() {
     setTest(question);
     try {
       setMessages((prevMessages) => [...prevMessages, { text: "USER: " + question + "에 대해서 알려줘" }]);
-      const prompt = question + "에 대해서 알려주고 주요 항목을 정리해서 200자 이내로 알려줘";
+      const prompt = question + "에 대해서 알려주고 주요 항목을 정리해서 200자 이내로 정리해서 알려줘";
       const result = await openai.createCompletion({
         model: "text-davinci-003",
         prompt: prompt,
